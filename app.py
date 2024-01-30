@@ -1,3 +1,7 @@
+"""
+This is the main script for the project. it contains the nessary functions for the website to run
+"""
+
 from flask import Flask
 
 app = Flask(__name__)
