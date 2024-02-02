@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .calendar {
+            width: 300px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .calendar-header {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .month {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .weekdays {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .weekday {
+            width: calc(100% / 7);
+            text-align: center;
+            font-weight: bold;
+        }
+        .days {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .day {
+            width: calc(100% / 7);
+            text-align: center;
+            padding: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .day:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calendar">
+    <div class="calendar-header">Calendar</div>
+    <div class="month">February 2024</div>
+    <div class="weekdays">
+        <div class="weekday">Sun</div>
+        <div class="weekday">Mon</div>
+        <div class="weekday">Tue</div>
+        <div class="weekday">Wed</div>
+        <div class="weekday">Thu</div>
+        <div class="weekday">Fri</div>
+        <div class="weekday">Sat</div>
+    </div>
+    <div class="days">
+        <!-- Days will be populated dynamically -->
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var daysContainer = document.querySelector('.days');
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1; // Month is 0-indexed
+
+        var daysInMonth = new Date(year, month, 0).getDate();
+        for (var i = 1; i <= daysInMonth; i++) {
+            var day = document.createElement('div');
+            day.classList.add('day');
+            day.textContent = i;
+            daysContainer.appendChild(day);
+        }
+    });
+</script>
+
+</body>
+</html>
