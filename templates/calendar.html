@@ -74,6 +74,11 @@
     </div>
     <div class="days">
         <!-- Days will be populated dynamically -->
+        {% for week in cal %}
+            {% for day in week %}
+                <div class="day">{{ day }}</div>
+            {% endfor %}
+        {% endfor %}
     </div>
 </div>
 
