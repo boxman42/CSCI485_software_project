@@ -81,23 +81,5 @@
         {% endfor %}
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var daysContainer = document.querySelector('.days');
-        var date = new Date();
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1; // Month is 0-indexed
-
-        var daysInMonth = new Date(year, month, 0).getDate();
-        for (var i = 1; i <= daysInMonth; i++) {
-            var day = document.createElement('div');
-            day.classList.add('day');
-            day.textContent = i;
-            daysContainer.appendChild(day);
-        }
-    });
-</script>
-
 </body>
 </html>
